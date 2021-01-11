@@ -1,0 +1,642 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name=viewport content="width=device-width, initial-scale=1">
+      <title>Jewel Hotel</title>
+
+      <link href="{% static 'blog/style/fontawesome.min.css' %}" rel="stylesheet"> 
+      <!fontawesome.min.css>
+
+      <link href="{% static 'blog/style/brands.min.css' %}" rel="stylesheet">
+      <!brands.min.css>
+
+      <link href="{% static 'blog/style/solid.min.css' %}" rel="stylesheet">
+      <!solid.min.css>
+
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="{% static 'blog/style/bootstrap.min.css' %}" >
+      <!bootstrap.min.css>
+
+      <link rel="stylesheet" href="{% static 'blog/style/jquery-ui.1-12-1.min.css' %}">
+      <!jquery-ui.1-12-1.min.css>
+
+      <link rel="stylesheet" href="{% static 'blog/style/header_footer.css' %}">
+      <!header_footer.css>
+
+      <link rel="stylesheet" href="{% static 'blog/style/branch.css' %}" >
+      <!branch.css>
+
+
+   </head>
+   <body>
+      <!--          start navbar -->
+      <nav class="navbar fixed-top navbar-expand-md navbar-dark">
+         <div class="container-fluid container-lg">
+            <a class="navbar-brand" href="#">Jewel Hotel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav">
+
+                  <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="{% url 'hotel-home' %}">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Branches
+                     </a>
+                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">Branch 1</a></li>
+                        <li><a class="dropdown-item" href="#">Branch 2</a></li>
+                        <li><a class="dropdown-item" href="#">Branch 3</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" aria-current="page" href="#gallery">gallery</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#" aria-current="page">Meeting</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">Services</a>
+                  </li>
+               </ul>
+               <ul class="navbar-nav ms-auto">
+                  <li class="nav-item ">
+                     <a class="nav-link" href="#">Sign in</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#">join us</a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+
+      </nav>
+
+      <!--          end navbar  -->
+      <div class="branch-back">
+         <div class="overlay d-flex text-center">
+            <div class="container">
+               <h2 class="h1">descrip of branch</h2>
+               <h2>Hey there</h2>
+               <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+            </div>
+         </div>
+      </div>
+      <!--         start Branches -->
+      <div class="rooms">
+         <div class="container-lg">
+            <h1 class="section-title">Avaliable Rooms</h1>
+            <form class="row form-dates justify-content-center">
+               <div class="col-12 col-sm-5 col-md-auto">
+                  <label for="arrival-date" class="form-label">Arrival date</label>
+                  <input type="text"  class="form-control" id="arrival-date" placeholder="Enter arrival date">
+               </div>
+               <div class="col-12 col-sm-5 col-md-auto">
+                  <label for="leave-date" class="form-label">Arrival date</label>
+                  <input type="text"  class="form-control" id="leave-date" placeholder="Enter leave date">
+               </div>
+               <div class="col-12 col-sm-2 col-md-auto  align-self-end">
+                  <button  type="submit" class="btn" id="" >GO</button>
+               </div>
+            </form>
+            <div class="row">
+               <div class="col-sm-3">
+                  <div class="filter">
+                     <span>
+                        <i class="fas fa-sliders-h mx-1"></i> filter
+                     </span>
+                     <form>
+
+                        <fieldset>
+                           <legend>Type</legend>
+
+                           <div class="">
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="all" checked>
+                                 <label class="form-check-label" for="all">
+                                    All
+                                 </label>
+                              </div>
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="single" >
+                                 <label class="form-check-label" for="single">
+                                    Single
+                                 </label>
+                              </div>
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="double">
+                                 <label class="form-check-label" for="double">
+                                    Double
+                                 </label>
+                              </div>
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="triple">
+                                 <label class="form-check-label" for="triple">
+                                    Triple
+                                 </label>
+                              </div>
+                           </div>
+                        </fieldset>
+                        <fieldset>
+                           <legend>View</legend>
+
+                           <div class="">
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="all" checked>
+                                 <label class="form-check-label" for="all">
+                                    All
+                                 </label>
+                              </div>
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="sea" >
+                                 <label class="form-check-label" for="sea">
+                                    Sea
+                                 </label>
+                              </div>
+                              <div class="form-check">
+                                 <input class="form-check-input" type="checkbox" value="" id="garden">
+                                 <label class="form-check-label" for="garden">
+                                    Garden
+                                 </label>
+                              </div>
+                           </div>
+                        </fieldset>
+                        <div class="d-flex">
+                           <label for="amount">Price range:</label>
+                           <input type="text" id="amount" readonly style="border:0;background-color:transparent;color:#eee;width:  6.5em;margin-bottom: .5em;">
+                        </div>
+                        <div id="slider-range"></div>
+                        <button type="submit" class="btn btn-primary btn-sm d-flex mx-auto my-3">Apply</button>
+                     </form> 
+                  </div>
+
+               </div>
+               <div class="col-sm-9">
+                  <div class="row">
+                     <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card">
+                           <img src="{% static 'blog/images/rooms/Picture1.jpg' %}" class="card-img-top" alt="...">
+                           <div class="card-body row">
+                              <div class="col">
+                                 <span>
+                                    <i class="fas fa-bed fa-1x"></i>
+                                    Triple beds</span>
+                              </div>
+                              <div class="col-auto">
+                                 <span>
+                                    <i class="fas fa-utensils fa-1x"></i>
+                                    Breakfast</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-water fa-1x"></i>
+                                    Sea view</span>
+                              </div>
+                              <div class="col-12 d-flex pt-2  justify-content-around">
+                                 <span class="price">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    100$</span>
+                                 <a class="btn btn-primary btn-sm" href="room.html">See datails</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card">
+                           <img src="{% static 'blog/images/rooms/Picture14.jpg' %}" class="card-img-top" alt="...">
+                           <div class="card-body row">
+                              <div class="col">
+                                 <span><i class="fas fa-bed fa-1x"></i>
+                                    Single bed</span>
+                              </div>
+                              <div class="col-auto">
+                                 <span>
+                                    <i class="fas fa-utensils fa-1x"></i>
+                                    Breakfast</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-water fa-1x"></i>
+                                    Sea view</span>
+                              </div>
+                              <div class="col-12 d-flex pt-2  justify-content-around">
+                                 <span class="price">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    100$</span>
+                                 <a class="btn btn-primary btn-sm" href="room.html">See datails</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card">
+                           <img src="{% static 'blog/images/rooms/Picture12.jpg' %}" class="card-img-top" alt="...">
+                           <div class="card-body row">
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-bed fa-1x"></i><i class="fas fa-bed fa-1x"></i>
+                                    Double beds</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-utensils fa-1x"></i>
+                                    Breakfast</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-water fa-1x"></i>
+                                    Sea view</span>
+                              </div>
+                              <div class="col-12 d-flex pt-2  justify-content-around">
+                                 <span class="price">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    100$</span>
+                                 <a class="btn btn-primary btn-sm" href="room.html">See datails</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card">
+                           <img src="{% static 'blog/images/rooms/Picture12.jpg' %}" class="card-img-top" alt="...">
+                           <div class="card-body row">
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-bed fa-1x"></i><i class="fas fa-bed fa-1x"></i>
+                                    Double beds</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-utensils fa-1x"></i>
+                                    Breakfast</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-water fa-1x"></i>
+                                    Sea view</span>
+                              </div>
+                              <div class="col-12 d-flex pt-2  justify-content-around">
+                                 <span class="price">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    100$</span>
+                                 <a class="btn btn-primary btn-sm" href="room.html">See datails</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card">
+                           <img src="{% static 'blog/images/rooms/Picture16.jpg' %}" class="card-img-top" alt="...">
+                           <div class="card-body row">
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-bed fa-1x"></i><i class="fas fa-bed fa-1x"></i>
+                                    Double beds</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-utensils fa-1x"></i>
+                                    Breakfast</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-water fa-1x"></i>
+                                    Sea view</span>
+                              </div>
+                              <div class="col-12 d-flex pt-2  justify-content-around">
+                                 <span class="price">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    100$</span>
+                                 <a class="btn btn-primary btn-sm" href="room.html">See datails</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
+                     <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card">
+                           <img src="{% static 'blog/images/rooms/Picture17.jpg' %}" class="card-img-top" alt="...">
+                           <div class="card-body row">
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-bed fa-1x"></i><i class="fas fa-bed fa-1x"></i>
+                                    Double beds</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-utensils fa-1x"></i>
+                                    Breakfast</span>
+                              </div>
+                              <div class="col-6">
+                                 <span>
+                                    <i class="fas fa-water fa-1x"></i>
+                                    Sea view</span>
+                              </div>
+                              <div class="col-12 d-flex pt-2  justify-content-around">
+                                 <span class="price">
+                                    <i class="fas fa-money-bill-wave"></i>
+                                    100$</span>
+                                 <a class="btn btn-primary btn-sm" href="room.html">See datails</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+      <!--         end Branches -->
+
+
+
+      <!--         start suites -->
+      <div class="rooms">
+         <div class="container">
+            <h1 class="section-title text-center">Avaliable Suites</h1>
+            <div class="container">
+               <div id="carouselExmIndicators" class="carousel slide" data-bs-ride="carousel"  data-type="multi" data-bs-interval="3000">
+
+                  <div class="carousel-inner">
+                     <div class="carousel-item justify-content-evenly" >
+                        <div class="col-12 col-md-4">
+                           <div class="item-box px-2">
+                              <div class="col">
+                                 <a class="card" href="#">
+                                    <img src="{% static 'blog/images/cairo.jpg' %}" class="card-img-top" alt="...">
+                                    <div class="card-img-overlay">
+                                       <h5 class="card-title">Cairo Branch</h5>
+                                    </div>
+                                    <div class="card-body">
+
+                                       <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                       <button class="btn btn-primary d-flex m-auto">Check Rates</button>
+                                    </div>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="carousel-item justify-content-evenly">
+                        <div class="col-12 col-md-4">
+                           <div class="item-box px-2">
+                              <div class="col">
+                                 <a class="card" href="#">
+                                    <img src="{% static 'blog/images/alex.jpg' %}" class="card-img-top" alt="...">
+                                    <div class="card-img-overlay">
+                                       <h5 class="card-title">Alexendria Branch</h5>
+                                    </div>
+                                    <div class="card-body">
+                                       <p class="card-text">standard dummy text ever since the 1500s, when an unknown printer took a galley of type .</p>
+                                       <button class="btn btn-primary d-flex m-auto">Check Rates</button>
+                                    </div>
+                                 </a>
+                              </div>
+                              <!--                        <h1 class="dd">2</h1>-->
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item justify-content-evenly">
+                        <div class="col-12 col-md-4">
+                           <div class="item-box px-2">
+                              <div class="col">
+                                 <a class="card" href="#">
+                                    <img src="{% static 'blog/images/gouna.jpg' %}" class="card-img-top" alt="...">
+                                    <div class="card-img-overlay">
+                                       <h5 class="card-title">Elgouna Branch</h5>
+                                    </div>
+                                    <div class="card-body">
+                                       <p class="card-text">It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                                       <button class="btn btn-primary d-flex m-auto">Check Rates</button>
+                                    </div>
+                                 </a>
+                              </div>
+                              <!--                        <h1 class="dd">3</h1>-->
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item justify-content-evenly">
+                        <div class="col-12 col-md-4">
+                           <div class="item-box px-2">
+                              <div class="col">
+                                 <a class="card" href="#">
+                                    <img src="{% static 'blog/images/alex.jpg' %}" class="card-img-top" alt="...">
+                                    <div class="card-img-overlay">
+                                       <h5 class="card-title">Alexendria Branch</h5>
+                                    </div>
+                                    <div class="card-body">
+                                       <p class="card-text">standard dummy text ever since the 1500s, when an unknown printer took a galley of type .</p>
+                                       <button class="btn btn-primary d-flex m-auto">Check Rates</button>
+                                    </div>
+                                 </a>
+                              </div>
+                              <!--                        <h1 class="dd">2</h1>-->
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item justify-content-evenly">
+                        <div class="col-12 col-md-4">
+                           <div class="item-box px-2">
+                              <div class="col">
+                                 <a class="card" href="#">
+                                    <img src="{% static 'blog/images/gouna.jpg' %}" class="card-img-top" alt="...">
+                                    <div class="card-img-overlay">
+                                       <h5 class="card-title">Elgouna Branch</h5>
+                                    </div>
+                                    <div class="card-body">
+                                       <p class="card-text">It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                                       <button class="btn btn-primary d-flex m-auto">Check Rates</button>
+                                    </div>
+                                 </a>
+                              </div>
+                              <!--                        <h1 class="dd">4</h1>-->
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item justify-content-evenly">
+                        <div class="col-12 col-md-4">
+                           <div class="item-box px-2">
+                              <div class="col">
+                                 <a class="card" href="#">
+                                    <img src="{% static 'blog/images/gouna.jpg' %}" class="card-img-top" alt="...">
+                                    <div class="card-img-overlay">
+                                       <h5 class="card-title">Elgouna Branch</h5>
+                                    </div>
+                                    <div class="card-body">
+                                       <p class="card-text">It has survived not only five centuries, but also the leap into electronic typesetting.</p>
+                                       <button class="btn btn-primary d-flex m-auto">Check Rates</button>
+                                    </div>
+                                 </a>
+                              </div>
+                              <!--                        <h1 class="dd">5</h1>-->
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <ol class="carousel-indicators">
+                     <li data-bs-target="#carouselExmIndicators" data-bs-slide-to="0"></li>
+                     <li data-bs-target="#carouselExmIndicators" data-bs-slide-to="1"></li>
+                     <li data-bs-target="#carouselExmIndicators" data-bs-slide-to="2"></li>
+                     <li data-bs-target="#carouselExmIndicators" data-bs-slide-to="3"></li>
+                     <li data-bs-target="#carouselExmIndicators" data-bs-slide-to="4"></li>
+                     <li data-bs-target="#carouselExmIndicators" data-bs-slide-to="5"></li>
+                  </ol>
+                  <a class="carousel-control-prev carousel-control" href="#carouselExmIndicators" role="button" data-bs-slide="prev">
+                     <span class="carousel-control-prev-icon" aria-hidden="true">
+                        <i class="fas fa-chevron-left control-icon"></i></span>
+                     <span class="visually-hidden">Previous</span>
+                  </a>
+                  <a class="carousel-control-next carousel-control" href="#carouselExmIndicators" role="button" data-bs-slide="next">
+                     <span class="carousel-control-next-icon" aria-hidden="true">
+                        <i class="fas fa-chevron-right control-icon"></i></span>
+                     <span class="visually-hidden">Next</span>
+                  </a>
+               </div> 
+            </div>
+         </div>
+      </div>
+      <!--      end suites-->
+
+
+      <!--         start footer  -->
+      <div class="footer py-4 text-left">
+         <div class="foot-up">
+            <div class="container">
+               <div class="row">
+                  <div class="col">
+                     <h5>Home</h5>
+                     <ul class="list-unstyled">
+                        <li><a>search</a></li>
+                        <li><a>Help</a></li>
+                     </ul>
+                  </div>
+                  <div class="col">
+                     <div class="follow">
+                        <div class="row">
+                           <h6>follow us on</h6>
+                        </div>
+                        <div class="row">
+                           <ul class="list-unstyled d-flex justify-content-around">
+                              <li><a><i class="fab fa-facebook-f"></i></a></li>
+                              <li><a><i class="fab fa-telegram-plane"></i></a></li>
+                              <li><a><i class="fab fa-snapchat-ghost"></i></a></li>
+                              <li><a><i class="fab fa-twitter"></i></a></li>
+                              <li><a><i class="fab fa-whatsapp"></i></a></li>
+                              <li><a><i class="fab fa-youtube"></i></a></li>
+                              <li><a><i class="fab fa-google"></i></a></li>
+                           </ul>
+                        </div>
+                        <div>call us <span>+21314</span></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--         end footer  -->
+
+      <script src="{% static 'blog/script/jquery-3.5.1.min.js' %}"></script>
+      <script src="{% static 'blog/script/jquery-ui.1-12-1.min.js' %}"></script>
+      <script defer src="{% static 'blog/script/brands.min.js' %}"></script>
+      <script defer src="{% static 'blog/script/solid.min.js' %}"></script>
+      <script defer src="{% static 'blog/script/fontawesome.min.js' %}"></script>
+      <script src="{% static 'blog/script/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'blog/script/index.js' %}"></script>
+
+      <!-- costum script and style for slider -->
+      <script>
+
+         $(document).ready(function() {
+            'use strict';
+
+            $('.carousel-item:first-child').addClass('active');
+            $('.carousel-indicators li:first-child').addClass('active');
+            $('.carousel .carousel-item').each(function(){
+               var next = $(this).next().children(':first-child');
+               if (!next.length) {
+                  next = $(this).siblings().first().children().eq(1).clone();
+               }
+               next.clone().appendTo($(this));
+               var prev= $(this).prev().children().eq(1).clone();
+               if ($(this).index()==0) {
+                  prev = $(this).siblings().last().children().eq(0).clone();
+               }
+               $(this).prepend(prev.clone());
+            });
+
+         });
+      </script>
+
+      <style>
+
+         .carousel-indicators {
+            bottom: -50px;
+         }
+
+         .carousel-indicators li {
+            background-color: #000;
+         }
+         .carousel-inner {
+            width: 90%;
+            margin: auto;
+         }
+         .carousel-item {
+            padding: 1em;
+            /*            display: flex;*/
+         }
+         .item-box {
+
+         }
+         .carousel-control {
+            width: 5%;
+         }
+         .control-icon {
+            color: #000;
+            font-size: 2em;
+         }
+         .carousel-item {
+            transition: transform 1s ease, opacity .2s ease-out;
+            text-align: center;
+         }
+         .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+            display: flex;
+         }
+         @media (min-width: 768px) { /*md*/
+
+            .active.carousel-item-end,
+            .carousel-item-next:not(.carousel-item-start) {
+               -webkit-transform: translateX(33.33%);
+               transform: translateX(33.33%);
+            }
+
+            .active.carousel-item-start,
+            .carousel-item-prev:not(.carousel-item-end) {
+               -webkit-transform: translateX(-33.33%);
+               transform: translateX(-33.33%);
+            }
+         }
+      </style>
+
+   </body>
+</html>
